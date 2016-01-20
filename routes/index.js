@@ -6,4 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'codeMad' });
 });
 
+router.get('/about', function(req, res, next) {
+  res.render('about', { title: 'codeMad' });
+});
+
+router.get('/articles', function(req, res, next) {
+  res.render('articles', { title: 'codeMad' });
+});
 module.exports = router;
