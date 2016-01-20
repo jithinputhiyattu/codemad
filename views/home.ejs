@@ -28,15 +28,20 @@
     <link rel="stylesheet" href="stylesheets/material.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
+
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-     <% include header.ejs %>
+        
+      <% include header.ejs %>
+   
+       
         <div class="android-content mdl-layout__content">
             <a name="top"></a>
-           	<h2><br>"<%= error.status %> Page not found."</h1>
-			<!--<pre><%= error.stack %></pre> -->
-           </div>
-        <% include footer.ejs %>  
+           
+            <h1>Welcome  <%=userName%>   </h1>
+
+            </div>
+             <% include footer.ejs %>
         </div>
     </div>
     

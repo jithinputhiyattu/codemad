@@ -32,27 +32,37 @@
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         
-           <% include header.ejs %>
+      <% include header.ejs %>
    
-        <div class="android-drawer mdl-layout__drawer">
-            <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/android-logo-white.png">
-        </span>
-        </div>
+       
         <div class="android-content mdl-layout__content">
             <a name="top"></a>
             <div class="android-be-together-section ">
               <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--6-col"></div>
-                <div class="mdl-cell mdl-cell--4-col"></div>
-                <div class="mdl-cell mdl-cell--2-col">
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary">
-                        Login
-                    </button>
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--colored ">
-                        Signup
-                    </button>
-                    </div>
+                <div class="mdl-cell mdl-cell--7-col"></div>
+                <div class="mdl-cell mdl-cell--3-col">
+    <form method="POST" action="/login_signup">
+        <div class="sample3 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" name="userName" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Username</label>
+        </div>
+
+        <div class="sample3 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password"  name ="password" id="sample3">
+            <label class="mdl-textfield__label" for="sample3">Password</label>
+        </div>
+ 
+    </div>
+      <div class="form-button mdl-cell mdl-cell--2-col">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary"
+        onclick="http://google.com">
+         Login
+         </button>
+    
+   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--colored ">
+        Signup
+  </button>
+   </div>   </form>
                 </div>
                 <div class="mdl-typography--text-center">
                 <div class="logo-font android-slogan">code yourself into success</div>
@@ -202,51 +212,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="android-footer mdl-mega-footer">
-                <div class="mdl-mega-footer--top-section">
-                    <div class="mdl-mega-footer--left-section">
-                        <button class="mdl-mega-footer--social-btn"></button>
-                        &nbsp;
-                        <button class="mdl-mega-footer--social-btn"></button>
-                        &nbsp;
-                        <button class="mdl-mega-footer--social-btn"></button>
-                    </div>
-                    <div class="mdl-mega-footer--right-section">
-                        <a class="mdl-typography--font-light" href="#top">
-                Back to Top
-                <i class="material-icons">expand_less</i>
-              </a>
-                    </div>
-                </div>
-                <div class="mdl-mega-footer--middle-section">
-                    <p class="mdl-typography--font-light">Satellite imagery: © 2016 Astrium, DigitalGlobe</p>
-                    <p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
-                </div>
-                <div class="mdl-mega-footer--bottom-section">
-                    <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-              Versions
-              <i class="material-icons">arrow_drop_up</i>
-            </a>
-                    <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-                        <li class="mdl-menu__item">5.0 Lollipop</li>
-                        <li class="mdl-menu__item">4.4 KitKat</li>
-                        <li class="mdl-menu__item">4.3 Jelly Bean</li>
-                        <li class="mdl-menu__item">Android History</li>
-                    </ul>
-                    <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
-              For Developers
-              <i class="material-icons">arrow_drop_up</i>
-            </a>
-                    <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-                        <li class="mdl-menu__item">App developer resources</li>
-                        <li class="mdl-menu__item">Android Open Source Project</li>
-                        <li class="mdl-menu__item">Android SDK</li>
-                        <li class="mdl-menu__item">Android for Work</li>
-                    </ul>
-                    <a class="android-link mdl-typography--font-light" href="">Blog</a>
-                    <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
-                </div>
-            </footer>
+             <% include footer.ejs %>
         </div>
     </div>
     

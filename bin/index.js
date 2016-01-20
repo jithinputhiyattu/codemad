@@ -5,7 +5,7 @@
  */
 
 var app = require('../main');
-var debug = require('debug')('codeMad:server');
+var debug = require('debug')('codemad:server');
 var http = require('http');
 
 /**

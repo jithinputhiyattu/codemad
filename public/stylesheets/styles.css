@@ -766,3 +766,22 @@ _:-ms-input-placeholder, :root .demo-graph {
           align-items: center;
 }
 
+.demo-card-square.mdl-card {
+  width:  300px;
+  height: 150px;
+}
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
+.form-button{
+  padding-top: 10px;
+}
+
+.sample3{
+  width: 150px;
+
+ 
+}
