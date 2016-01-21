@@ -11,8 +11,9 @@
     "debug": "~2.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
-    "mongodb" : "*",
+    "mongodb": "*",
     "morgan": "~1.6.1",
+    "multer": "^1.1.0",
     "serve-favicon": "~2.3.0"
   },
   "author": "jithinputhiyattu"
