@@ -9,15 +9,15 @@ db = new Db('codemad', server, {safe: true});
 var users  = require('./users');
 db.open(function(err, db) 
 {
+
     if(!err) 
     {
         console.log("Connected to 'codemad' database");
         db.collection('users', {safe:true}, function(err, collection)
         {
             if (err) 
-            {
-                console.log("The 'users' collection doesn't exist. Creating it with sample data.");
-                users.populateDB(db);
+            {  console.log("The 'users' collection doesn't exist. Creating it with sample data.");
+                users.populateDB( db);
             }
             else
             {
@@ -39,6 +39,7 @@ exports.findByUserId = function(req, res)
     {
         collection.findOne({'_id' :new BSON.ObjectID(id)}, function(err, item) 
         {
+
             res.send(item);
         });
     });
@@ -63,6 +64,8 @@ exports.findByName = function(req, res, callback)
     {
         collection.findOne({'url':id}, function(err, item) 
         {
+             console.log(item);
+
              callback(item);
         });
     });

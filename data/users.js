@@ -2,7 +2,7 @@
 
 var populateDB = function(db) 
 {
-
+    console.log('Iside populate db for users');
     var users = [
     {
         name: "Jithin Puthiyattu",
@@ -25,14 +25,14 @@ var populateDB = function(db)
         picture: "nisamudheenm.jpg"
     },
     {
-        name: "Jishnu V",
-        email: "",
-        url : "jishnuv",
+        name: "Jishnu Vasanth",
+        email: "jishnuvasanth@gmail.com",
+        url : "jishnuvasanth",
         psw : "sha256code",
         dob : "03/12/1992",
         country: "India",
         joinon : "1/12/2016",
-        picture: "jishnuv.jpg"
+        picture: "jishnuvasanth.jpg"
     },
     {
         name: "Renju Ashokan",
@@ -50,3 +50,4 @@ var populateDB = function(db)
         collection.insert(users, {safe:true}, function(err, result) {});
     });
    };
+
