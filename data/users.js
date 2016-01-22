@@ -16,7 +16,7 @@ var populateDB = function(db)
     },
     {
         name: "Nisamudheen M",
-        email: "",
+        email: "nisamudheenm@gmail.com",
         url : "nisamudheenm",
         psw : "9f9bc504c4f714ab1d534b911215badce7695f299c8fab7d6b8dc242e0f88816",
         dob : "03/12/1992",
@@ -36,10 +36,10 @@ var populateDB = function(db)
     },
     {
         name: "Renju Ashokan",
-        email: "nomail@gmail.com",
+        email: "renjuashokan@gmail.com",
         url : "renjuashokan",
         psw : "9f9bc504c4f714ab1d534b911215badce7695f299c8fab7d6b8dc242e0f88816",
-        dob : "03/12/1993",
+        dob : "11/06/1993",
         country: "India",
         joinon : "1/12/2016",
         picture: "renjuashokan.jpg"
