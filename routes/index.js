@@ -14,7 +14,7 @@ router.get('/about', function(req, res, next) {
 router.get('/articles', function(req, res, next) {
   res.render('articles', { title: 'codeMad' });
 });
-
+/*
 router.post('/login_signup',function(req, res, next) 
 {
   var userName = req.body.userName;
@@ -27,5 +27,5 @@ router.post('/login_signup',function(req, res, next)
   	});
  
 });
-
+*/
 module.exports = router;
