@@ -56,6 +56,29 @@ exports.findById = function(req, res) {
     });
 };
 
+exports.insertUser= function(req, res, callback) 
+{
+        var user ={name :req.body.userName,
+        email :req.body.email,url :req.body.email,
+        psw : "9f9bc504c4f714ab1d534b911215badce7695f299c8fab7d6b8dc242e0f88816",
+        dob : "03/12/1990", country: "India",joinon : "1/12/2016",picture: req.body.email+".jpg"};
+
+    db.collection('users', function(err, collection) 
+    {
+        collection.insert(users, {safe:true}, function(err, result) {
+            if(err)
+            {
+                console.log("user insertion failed");
+            }
+            else
+            {
+               console.log("user inserted successfully");
+            }
+            callback(result);
+        });
+    });
+};
+
 exports.findByName = function(req, res, callback) 
 {
     var id =  req.body.userName;
