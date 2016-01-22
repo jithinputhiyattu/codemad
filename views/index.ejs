@@ -1,20 +1,4 @@
 <!doctype html>
-<!--
-  Material Design Lite
-  Copyright 2015 Google Inc. All rights reserved.
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      https://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License
--->
 
 <head>
     <meta charset="utf-8">
@@ -53,17 +37,50 @@
         </div>
  
     </div>
-      <div class="form-button mdl-cell mdl-cell--2-col">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary"
-        onclick="http://google.com">
-         Login
-         </button>
-    
-   <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--colored ">
-        Signup
-  </button>
-   </div>   </form>
-                </div>
+                        <div class="form-button mdl-cell mdl-cell--2-col">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary" onclick="http://google.com">
+                                Login
+                            </button>
+                            <a href="#" onclick='overlay()'>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--colored ">
+                                    Signup
+                                </button>
+                            </a>
+                        </div>
+                        </form>
+                        <div id="overlay">
+                            <div class="demo-card-wide mdl-card mdl-shadow--5dp">
+                                <div class="mdl-card__title">
+                                    <form action="#">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="sample3">
+                                            <label class="mdl-textfield__label" for="sample3">Name</label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="email" id="sample3">
+                                            <label class="mdl-textfield__label" for="sample3">e-mail id</label>
+                                        </div>
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="password" id="sample3">
+                                            <label class="mdl-textfield__label" for="sample3">Password</label>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="mdl-card__actions mdl-card--border">
+                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                       Sign up
+                                     </a>
+                                </div>
+                                <div class="mdl-card__menu">
+                                    <a href="#" onclick="overlay()">
+                                        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <div class="mdl-typography--text-center">
                 <div class="logo-font android-slogan">code yourself into success</div>
                 <div class="logo-font android-sub-slogan">welcome to the world of madness</div>
@@ -208,14 +225,14 @@
                    Find apps
                    <i class="material-icons">chevron_right</i>
                  </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <% include footer.ejs %>
                 </div>
             </div>
-             <% include footer.ejs %>
-        </div>
-    </div>
-    
-    <script src="javascripts/material.min.js"></script>
+            <script src="javascripts/material.min.js"></script>
+            <script type="text/javascript" src="javascripts/js.js"></script>
 </body>
 </html>

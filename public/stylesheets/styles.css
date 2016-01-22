@@ -766,15 +766,43 @@ _:-ms-input-placeholder, :root .demo-graph {
           align-items: center;
 }
 
-.demo-card-square.mdl-card {
-  width:  300px;
-  height: 150px;
+
+
+ /* .demo-card-wide.mdl-card{
+  width: 1000px;
+  
+ }  */
+.demo-card-wide > .mdl-card__title {
+  color: #000000;
+  height: 176px;
+  
 }
-.demo-card-square > .mdl-card__title {
-  color: #fff;
-  background:
-    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+.demo-card-wide > .mdl-card__menu {
+  color: #000000;
+
 }
+
+#overlay {
+     visibility: hidden;
+     position: absolute;
+     left: 0px;
+     top: 0px;
+     width:100%;
+     height:100%;
+     text-align:center;
+     z-index: 1000;
+    background: rgba(128,128,128,.8);
+}
+
+#overlay .demo-card-wide.mdl-card{
+     width:600px;
+     margin: 100px auto;
+    
+     padding:15px;
+     text-align:center;
+}
+
+
 
 .form-button{
   padding-top: 10px;
