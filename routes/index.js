@@ -21,8 +21,9 @@ router.post('/login_signup',function(req, res, next)
   console.log('User name : '+userName);
   data.findByName(req, res,function(callback)
   	{
-         var html = 'Hello: ' + userName + '.<br>';
-         res.send(callback);
+         var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
+       res.render('home',{userName : callback.name 
+          ,email: callback.email });
   	});
  
 });
