@@ -1,5 +1,4 @@
 <!doctype html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="stylesheets/material.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
-
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <% include header.ejs %>
@@ -21,20 +19,20 @@
             <div class="android-be-together-section ">
               <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--7-col"></div>
-                <div class="mdl-cell mdl-cell--3-col">
-    
+     <div class="mdl-cell mdl-cell--3-col">
+     <form action="/login" method="get">
         <div class="sample3 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="userName" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">Username</label>
+            <input class="mdl-textfield__input" type="text" name="userName" id="userName">
+            <label class="mdl-textfield__label" for="userName">Username</label>
         </div>
 
         <div class="sample3 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="password"  name ="password" id="sample3">
-            <label class="mdl-textfield__label" for="sample3">Password</label>
+            <input class="mdl-textfield__input" type="password"  name ="password" id="password">
+            <label class="mdl-textfield__label" for="password">Password</label>
         </div>
- 
+     </form>
     </div>
-                        <div class="form-button mdl-cell mdl-cell--2-col">
+     <div class="form-button mdl-cell mdl-cell--2-col">
                              <a href="/login">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary">
                                 Login
@@ -52,15 +50,15 @@
                                 <div class="mdl-card__title">
                                     <form action="#">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="sample3" name="userName">
+                                            <input class="mdl-textfield__input" type="text" id="sample3" name="signupUserName">
                                             <label class="mdl-textfield__label" for="sample3" >Name</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="email" id="sample3" name="email">
+                                            <input class="mdl-textfield__input" type="email" id="sample3" name="signupEmail">
                                             <label class="mdl-textfield__label" for="sample3" >e-mail id</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="password" id="sample3" name="psassword">
+                                            <input class="mdl-textfield__input" type="signupPassword" id="sample3" name="psassword">
                                             <label class="mdl-textfield__label" for="sample3">Password</label>
                                         </div>
                                     </form>

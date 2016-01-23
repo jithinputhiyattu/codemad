@@ -58,14 +58,14 @@ exports.findById = function(req, res) {
 
 exports.insertUser= function(req, res, callback) 
 {
-        var user ={name :req.body.userName,
-        email :req.body.email,url :req.body.email,
+        var user ={name :req.body.signupUserName,
+        email :req.body.signupEmail,url :req.body.signupEmail,
         psw : "9f9bc504c4f714ab1d534b911215badce7695f299c8fab7d6b8dc242e0f88816",
-        dob : "03/12/1990", country: "India",joinon : "1/12/2016",picture: req.body.email+".jpg"};
+        dob : "03/12/1990", country: "India",joinon : "1/12/2016",picture: req.body.signupEmail+".jpg"};
 
     db.collection('users', function(err, collection) 
     {
-        collection.insert(users, {safe:true}, function(err, result) {
+        collection.insert(user, {safe:true}, function(err, result) {
             if(err)
             {
                 console.log("user insertion failed");
@@ -81,7 +81,7 @@ exports.insertUser= function(req, res, callback)
 
 exports.findByName = function(req, res, callback) 
 {
-    var id =  req.body.userName;
+    var id =  req.query.userName;
     console.log('Retrieving user: ' + id);
     db.collection('users', function(err, collection) 
     {
