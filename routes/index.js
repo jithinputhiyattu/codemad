@@ -23,6 +23,7 @@ router.post('/login',function(req, res, next)
     {
          var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
          res.render('home',{userName : callback.name 
+          ,profilePic : callback.picture
           ,email: callback.email });
     });
  

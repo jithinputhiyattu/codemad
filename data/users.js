@@ -1,8 +1,8 @@
 
 
-var populateDB = function(db) 
+exports.populateDB = function(db) 
 {
-    console.log('Iside populate db for users');
+    console.log('Inside populate db for users');
     var users = [
     {
         name: "Jithin Puthiyattu",
@@ -44,10 +44,11 @@ var populateDB = function(db)
         joinon : "1/12/2016",
         picture: "renjuashokan.jpg"
     }];
-
     db.collection('users', function(err, collection) 
     {
         collection.insert(users, {safe:true}, function(err, result) {});
     });
+    db.users.ensureIndex({email:1},{unique:true}); 
+    db.users.ensureIndex({url:1},{unique:true});
    };
 

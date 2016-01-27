@@ -15,9 +15,10 @@ db.open(function(err, db)
         console.log("Connected to 'codemad' database");
         db.collection('users', {safe:true}, function(err, collection)
         {
-            if (err) 
-            {  console.log("The 'users' collection doesn't exist. Creating it with sample data.");
-                users.populateDB( db);
+            if (!err) 
+            {  
+                console.log("The 'users' collection doesn't exist. Creating it with sample data.");
+                users.populateDB(db);
             }
             else
             {
