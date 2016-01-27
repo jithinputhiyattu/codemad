@@ -20,9 +20,9 @@
               <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--7-col"></div>
      <div class="mdl-cell mdl-cell--3-col">
-     <form action="/login" method="get">
+     <form action="/login" method="post">
         <div class="sample3 mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" name="userName" id="userName">
+            <input name="userName" class="mdl-textfield__input" type="text"  id="userName">
             <label class="mdl-textfield__label" for="userName">Username</label>
         </div>
 
@@ -30,14 +30,12 @@
             <input class="mdl-textfield__input" type="password"  name ="password" id="password">
             <label class="mdl-textfield__label" for="password">Password</label>
         </div>
-     </form>
     </div>
      <div class="form-button mdl-cell mdl-cell--2-col">
-                             <a href="/login">
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary">
                                 Login
                             </button>
-                               </a>
+                             </form>
                             <a onclick='overlay()'>
                                 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent mdl-button--colored ">
                                     Signup
@@ -48,26 +46,28 @@
                         <div id="overlay">
                             <div class="demo-card-wide mdl-card mdl-shadow--5dp">
                                 <div class="mdl-card__title">
-                                    <form action="#">
+                                  <form action="/signup" method="post">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="text" id="sample3" name="signupUserName">
+                                            <input name="signupUserName" class="mdl-textfield__input" type="text" id="sample3" >
                                             <label class="mdl-textfield__label" for="sample3" >Name</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="email" id="sample3" name="signupEmail">
+                                            <input name="signupEmail" class="mdl-textfield__input" type="email" id="sample3" >
                                             <label class="mdl-textfield__label" for="sample3" >e-mail id</label>
                                         </div>
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                            <input class="mdl-textfield__input" type="signupPassword" id="sample3" name="psassword">
+                    <input name="signupPsassword" class="mdl-textfield__input" type="password" id="sample3" >
                                             <label class="mdl-textfield__label" for="sample3">Password</label>
                                         </div>
-                                    </form>
+                                   
                                 </div>
                                 <div class="mdl-card__actions mdl-card--border">
-                                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="\signup">
-                                       Sign up
-                                     </a>
+                                      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect  mdl-button--primary">
+                                Sign up
+                            </button>
+
                                 </div>
+                            </form>
                                 <div class="mdl-card__menu">
                                     <a href="#" onclick="overlay()">
                                         <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">

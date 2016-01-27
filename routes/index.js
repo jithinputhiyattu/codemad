@@ -15,10 +15,10 @@ router.get('/articles', function(req, res, next) {
   res.render('articles', { title: 'codeMad' });
 });
 
-router.get('/login',function(req, res, next) 
+router.post('/login',function(req, res, next) 
 {
-  var userName = req.query.userName;
-  console.log('Your user name : '+req.query);
+  var userName = req.body.userName;
+  console.log(userName);
   data.findByName(req, res,function(callback)
     {
          var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
@@ -28,9 +28,9 @@ router.get('/login',function(req, res, next)
  
 });
 
-router.get('/signup',function(req, res, next) 
+router.post('/signup',function(req, res, next) 
 {
-  var userName = req.query.signupUserName;
+  var userName = req.body.signupUserName;
   console.log('User name : '+userName);
 
   data.insertUser(req, res,function(callback)

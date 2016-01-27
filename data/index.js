@@ -81,7 +81,7 @@ exports.insertUser= function(req, res, callback)
 
 exports.findByName = function(req, res, callback) 
 {
-    var id =  req.query.userName;
+    var id =  req.body.userName;
     console.log('Retrieving user: ' + id);
     db.collection('users', function(err, collection) 
     {
