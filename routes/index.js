@@ -22,7 +22,7 @@ router.post('/login',function(req, res, next)
   data.findByName(req, res,function(callback)
     {
          var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
-         res.render('home',{userName : callback.name 
+         res.render('dashboard',{userName : callback.name 
           ,profilePic : callback.picture
           ,email: callback.email });
     });
