@@ -15,6 +15,20 @@ router.get('/articles', function(req, res, next) {
   res.render('articles', { title: 'codeMad' });
 });
 
+router.get('/contactus', function(req, res, next) {
+  res.render('contactus', { title: 'codeMad' });
+});
+
+router.get('/exam', function(req, res, next) {
+  res.render('exam', { title: 'codeMad' });
+});
+
+
+
+router.get('/practice', function(req, res, next) {
+  res.render('practice', { title: 'codeMad' });
+});
+
 router.post('/login',function(req, res, next) 
 {
   var userName = req.body.userName;

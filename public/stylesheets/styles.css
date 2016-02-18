@@ -1038,3 +1038,15 @@ _:-ms-input-placeholder, :root .demo-graph {
       -ms-flex-align: center;
           align-items: center;
 }
+/*#txtarea
+{
+ 
+    resize: none;
+min-width: 1000px;
+min-height: 300px;
+  
+}
+#btnSub{
+  margin-right: 100px;
+  margin-left: 1400px;
+}*/
