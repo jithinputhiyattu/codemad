@@ -6,3 +6,9 @@ docker images -q | xargs docker rmi
 
 docker rm $(docker ps -a -q)
 
+docker rmi $(docker images -q)
+
+
+g++ Compile.cpp  -o Compile.out
+
+

@@ -4,3 +4,5 @@ docker images -q | xargs docker rmi
 
 9190142
 
+docker rm $(docker ps -a -q)
+
