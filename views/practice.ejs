@@ -1,47 +1,59 @@
 <!doctype html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CodeMad - code yourself into success</title>
-    <!-- Page styles -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/material.min.css">
-    <link rel="stylesheet" href="stylesheets/styles.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeMad - code yourself into success</title>
+  <!-- Page styles -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/material.min.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
 </head>
-
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        
-      <% include header.ejs %>
-   
-       
-  <div class="android-content mdl-layout__content">
-  <div class="mdl-typography--text-right">
-  <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--2-col">ksadjk</div>
-  <div class="mdl-cell mdl-cell--10-col">
-    <form action="/submit" method="post" >
-     <div class="mdl-grid">
-      <h1>jsaalkshdjkhdkjadjahdkjas</h1>
+  <div class="mdl-layout  mdl-layout--fixed-header">
+    <% include header.ejs %>
+    <div class=" practice">
+      <div class="mdl-grid ">
+        <span> Q1:Factorial </span></div>
+        <div class="mdl-grid ">
+          <span><h5>Find the factorial of a number </h5></span></div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--9-col">
+              <textarea id="codearea">  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia beatae fugit ut itaque eos odio libero accusamus, aliquid ducimus maxime. Necessitatibus consectetur id repellendus atque ipsum, dicta aperiam nam quam.</textarea>
+            </div>
+            <div class="mdl-cell mdl-cell--3-col">
+              <div class="mdl-grid"> <textarea id="codearea1"> test case</textarea>
+              </div>
+              <div class="mdl-grid"> <textarea id="codearea1">Output</textarea>
+              </div>
+            </div>
+            <div class="mdl-grid submit-space">
+<div class="mdl-select mdl-js-select mdl-select--floating-label">
+        <select class="mdl-select__input" id="professsion" name="professsion">
+          <option value=""></option>
+          <option value="option1">C</option>
+          <option value="option2">C++</option>
+          <option value="option3">Java</option>
+          <option value="option4">Python</option>
+          <option value="option5">PHP</option>
+        </select>
+        <label class="mdl-select__label" for="professsion">Select the language</label>
       </div>
-        <textarea class="mdl-cell mdl-cell--12-col"id="txtarea">sladkaslkdlasdal</textarea>
-        <div class="mdl-cell--10-offset mdl-cell mdl-cell--12"  id="btnSub"><button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" > Submit</button></div>
-        
-       
 
-</form>
-</div>
-</div> 
-  
-</div>
-             <% include footer.ejs %>
+
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btnlist">Compile</button> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit</button></div>
+          </div>
         </div>
+      </div>
+      
+      <% include footer.ejs %>
     </div>
-    
-    <script src="javascripts/material.min.js"></script>
+  </div>
+  
+  
+  <script src="javascripts/material.min.js"></script>
+  <script type="text/javascript" src="javascripts/js.js"></script>
 </body>
-
 </html>
