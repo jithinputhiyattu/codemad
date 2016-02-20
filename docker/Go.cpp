@@ -143,21 +143,33 @@ int main(int argc,char *argv[])
         fscanf(fin," %[^\n]",line);
         fclose(fin);
         extractId(line,id);
-        cout<<endl<<id<<endl;
         //copy file to the continer
         copyFromHost(id,argc,argv);
         sleep(1);
-        compileAndRun(id,argc,argv);
-        sleep(4);
-        copyToHost(id,argc,argv);
-        //clean the memory and delete the continer...
-        removeContiner(id);
+        int run_child=0;
+        if(run_child=fork())
+        {
+            sleep(4);
+            copyToHost(id,argc,argv);
+            if(run_child)
+            {
+		       kill(run_child, SIGKILL);
+		    }
+            //clean the memory and delete the continer...
+            removeContiner(id);
+            wait(NULL);
+        }
+        else
+        {
+          compileAndRun(id,argc,argv);
+        }
         delete line;
         delete id;
     }
     else
     {
     	cout<<"error msg : "<<"error in file operation.."<<endl;
+        kill(child_id, SIGKILL);
     }
     wait(NULL);
   }
