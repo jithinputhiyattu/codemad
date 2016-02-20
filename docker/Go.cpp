@@ -27,7 +27,38 @@ void setProgram(char *source)
 
 void copyFromHost(char*id,int argc ,char* argv[])
 {
+ char *cmd = new char[250];
+ strcpy(cmd,"docker cp ");
+ strcat(cmd,argv[1]);
+ strcat(cmd," "); 
+ strcat(cmd,id); 
+ strcat(cmd,":/");
+ strcat(cmd,argv[1]);
+ cout<<"executing : "<<cmd<<endl;
+ system(cmd);
+ for(int i=2;i<argc;i++)
+ {
+ 	strcpy(cmd,"docker cp ");
+    strcat(cmd,argv[i]);
+    strcat(cmd,".in "); 
+    strcat(cmd,id); 
+    strcat(cmd,":/");
+    strcat(cmd,argv[i]);
+    strcat(cmd,".in"); 
+    cout<<"executing : "<<cmd<<endl;
+    system(cmd);
 
+    strcpy(cmd,"docker cp ");
+    strcat(cmd,argv[i]);
+    strcat(cmd,".key "); 
+    strcat(cmd,id); 
+    strcat(cmd,":/");
+    strcat(cmd,argv[i]);
+    strcat(cmd,".key"); 
+    cout<<"executing : "<<cmd<<endl;
+    system(cmd);
+ }
+ delete cmd;
 }
 
 void compileAndRun(char*id,int argc ,char* argv[])
@@ -36,7 +67,16 @@ void compileAndRun(char*id,int argc ,char* argv[])
 }
 void copyToHost(char*id,int argc ,char* argv[])
 {
-	
+ char *cmd = new char[250];
+ strcpy(cmd,"docker cp ");
+ strcat(cmd,id);
+ strcat(cmd,":/");
+ strcat(cmd,result);
+ strcat(cmd," "); 
+ strcat(cmd,result);
+ cout<<"executing : "<<cmd<<endl;
+ system(cmd);
+ delete cmd;
 }
 
 void extractId(char*line_i,char*id_o)
@@ -85,6 +125,7 @@ int main(int argc,char *argv[])
         cout<<endl<<id<<endl;
         //copy file to the continer
         copyFromHost(id,argc,argv);
+        sleep(1);
         compileAndRun(id,argc,argv);
         copyToHost(id,argc,argv);
 
