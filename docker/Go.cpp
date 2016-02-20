@@ -63,7 +63,18 @@ void copyFromHost(char*id,int argc ,char* argv[])
 
 void compileAndRun(char*id,int argc ,char* argv[])
 {
-
+ char *cmd = new char[250];
+ strcpy(cmd,"docker exec ");
+ strcat(cmd,id);
+ strcat(cmd," ./Compile.out");
+ for(int i=1;i<argc;i++)
+ {
+   strcat(cmd," ");
+   strcat(cmd,argv[i]);
+ }
+ cout<<"executing : "<<cmd<<endl;
+ system(cmd);
+ delete cmd;
 }
 void copyToHost(char*id,int argc ,char* argv[])
 {
@@ -74,6 +85,16 @@ void copyToHost(char*id,int argc ,char* argv[])
  strcat(cmd,result);
  strcat(cmd," "); 
  strcat(cmd,result);
+ cout<<"executing : "<<cmd<<endl;
+ system(cmd);
+ delete cmd;
+}
+
+void removeContiner(char* id)
+{
+ char *cmd = new char[250];
+ strcpy(cmd,"docker rm -f ");
+ strcat(cmd,id);
  cout<<"executing : "<<cmd<<endl;
  system(cmd);
  delete cmd;
@@ -127,10 +148,10 @@ int main(int argc,char *argv[])
         copyFromHost(id,argc,argv);
         sleep(1);
         compileAndRun(id,argc,argv);
+        sleep(4);
         copyToHost(id,argc,argv);
-
         //clean the memory and delete the continer...
-
+        removeContiner(id);
         delete line;
         delete id;
     }

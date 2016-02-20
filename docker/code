@@ -4,7 +4,7 @@ docker images -q | xargs docker rmi
 
 9190142
 
-docker rm $(docker ps -a -q)
+sudo docker rm $(sudo docker ps -a -q)
 
 docker rmi $(docker images -q)
 
@@ -17,3 +17,5 @@ sudo docker ps -a | awk '$5=="minutes" && $7=="Up" {print $1}'
 
 docker cp foo.txt mycontainer:/foo.txt
 docker cp mycontainer:/foo.txt foo.txt
+
+docker exec <container_id> echo "Hello from container!"
