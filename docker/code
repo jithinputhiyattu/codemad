@@ -11,4 +11,9 @@ docker rmi $(docker images -q)
 
 g++ Compile.cpp  -o Compile.out
 
+sudo docker ps -a | awk '$5=="minutes"  {print $1}' 
 
+sudo docker ps -a | awk '$5=="minutes" && $7=="Up" {print $1}' 
+
+docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt

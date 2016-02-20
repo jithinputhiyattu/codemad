@@ -1,7 +1,7 @@
-#include<iostream>
-#include<stdlib.h>
-#include<string.h>
-#include<stdio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 using namespace std;
 /*
 Input
@@ -69,7 +69,7 @@ int compareResult(char*output,char*key)
 
   if(NULL==fout||NULL==fkey)
   {
-    cout<<"Error : invalid input file name"<<endl;
+    cout<<"error msg : invalid input file name "<<output<<" || "<<key<<endl;
   }
  do
  {
@@ -91,16 +91,15 @@ int compareResult(char*output,char*key)
 
 void execcuteCode(char*outFile,char*input,char*result)
 {
-  FILE *fin= fopen(input,"r+");
+  FILE *fin= fopen(input,"r");
   if(NULL==fin)
   {
-    cout<<"Error : invalid input file name"<<endl;
+    cout<<"error msg : invalid input file name "<<input<<endl;
   }
  char* cmd = new char [3000];
  strcpy(cmd,"./");
  strcat(cmd,outFile);
  strcat(cmd,"  ");
-
  int i=strlen(cmd)-1;
  do
  {
@@ -130,13 +129,7 @@ void writeResult(const char *line)
 
 void init()
  {
-  char *cmd= new char [500];  
-  strcpy(cmd,"rm "); 
-  strcat(cmd,result); 
-  cout<<"executing : "<<cmd<<endl;
-  system(cmd);
   writeResult("In   Out  Key  Score");
-  delete cmd;
  }
 
 int main(int argc,char* argv[])
@@ -170,6 +163,7 @@ int main(int argc,char* argv[])
  }
  strcpy(res,"cat ");
  strcat(res, result);
+ cout<<"executing : "<<res<<endl;
  system(res);
  delete in;
  delete out;

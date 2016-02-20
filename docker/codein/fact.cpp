@@ -9,6 +9,9 @@ int fact(int n)
  }
 int main(int argc,char *argv[])
 {
+ while(1)
+ 	 {
+ 	 };//infinite loop
  int in,out;
  for(int i=1;i<argc;i++)
  {
