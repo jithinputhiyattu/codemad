@@ -1,8 +1,0 @@
-ps -aux | grep " -it codemad" | awk '{print $2}';
-
-docker images -q | xargs docker rmi
-
-9190142
-
-docker rm $(docker ps -a -q)
-
