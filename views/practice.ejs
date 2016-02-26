@@ -19,9 +19,32 @@
         <span> Q1:Factorial </span></div>
         <div class="mdl-grid ">
           <span><h5>Find the factorial of a number </h5></span></div>
+             <form action="/execute" method="post">
           <div class="mdl-grid">
+
             <div class="mdl-cell mdl-cell--9-col">
-              <textarea id="codearea">  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia beatae fugit ut itaque eos odio libero accusamus, aliquid ducimus maxime. Necessitatibus consectetur id repellendus atque ipsum, dicta aperiam nam quam.</textarea>
+              <textarea name = "codearea" id="codearea"  maxlength="50000"> /* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia beatae fugit ut itaque eos odio libero accusamus, aliquid ducimus maxime. Necessitatibus consectetur id repellendus atque ipsum, dicta aperiam nam quam.*/
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+int fact(int n)
+ {
+  if(n<2) return 1;
+  return n * fact(n-1);
+ }
+int main(int argc,char *argv[])
+{
+ int in,out;
+ for(int i=1;i &lt argc;i++)
+ {
+  in = atoi(argv[i]);
+  out = fact(in);
+  cout &lt&lt out &lt&lt endl;
+ }
+ return 0;
+}
+              </textarea>
             </div>
             <div class="mdl-cell mdl-cell--3-col">
               <div class="mdl-grid"> <textarea id="codearea1"> test case</textarea>
@@ -42,8 +65,12 @@
         <label class="mdl-select__label" for="professsion">Select the language</label>
       </div>
 
-
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btnlist">Compile</button> <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit</button></div>
+   <form action="/compile" method="post">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btnlist">Compile</button> 
+        </form>
+   
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Submit</button> </form>
+        </div>
           </div>
         </div>
       </div>

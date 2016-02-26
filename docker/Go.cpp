@@ -134,7 +134,7 @@ int main(int argc,char *argv[])
   int child_id =0;
   if((child_id=fork()))
   {
-    sleep(1);
+    sleep(3);
     FILE *fin=fopen(temporary,"r");
     if(fin)
     {
@@ -176,7 +176,7 @@ int main(int argc,char *argv[])
   else
   {
   	//child process
-    strcpy(cmd,"docker run -it ubuntu14 >> ");
+    strcpy(cmd,"docker run -t ubuntu14 >> ");
     strcat(cmd,temporary);
     cout<<"executing : "<<cmd<<endl;
     system(cmd);
