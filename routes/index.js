@@ -66,22 +66,24 @@ router.post('/execute',function(req, res, next)
     }
     else
     {
-
         //var prc = spawn('./docker/Go.out ', ['codein/fact/userurl.cpp',  'codein/fact/fact_1',  'codein/fact/fact_2', 'codein/fact/fact_3' ]);
       exec('sudo ./Go.out userurl_fact.cpp fact_1 fact_2 fact_3', 
         function callback(error, stdout, stderr)
         {
-         console.log(stdout);       
-         console.log(error);
-         var html = '<h3>Hello: ' + codearea + '</h1>';
-         res.send(html);
+             console.log(stdout);       
+             console.log(error);
+             fs.readFile('userurl_fact.output','utf8' ,function readed(err, data)
+             {
+             if (err) 
+              {
+                throw err;
+              }
+              console.log(data);
+              res.render('result', { data: data }); 
+            });
        });
-
     }
-  
   }); 
-  
-         
 });
 
 
