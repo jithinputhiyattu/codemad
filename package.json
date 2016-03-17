@@ -15,7 +15,8 @@
     "mongodb": "*",
     "morgan": "~1.6.1",
     "multer": "^1.1.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "docker-cmd":"1.10.3"
   },
   "author": "jithinputhiyattu"
 }
