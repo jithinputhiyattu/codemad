@@ -134,7 +134,7 @@ int main(int argc,char *argv[])
   int child_id =0;
   if((child_id=fork()))
   {
-    sleep(3);
+    sleep(1);
     FILE *fin=fopen(temporary,"r");
     if(fin)
     {
@@ -149,7 +149,7 @@ int main(int argc,char *argv[])
         int run_child=0;
         if(run_child=fork())
         {
-            sleep(4);
+            sleep(2);
             copyToHost(id,argc,argv);
             if(run_child)
             {

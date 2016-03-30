@@ -1196,3 +1196,21 @@ _:-ms-input-placeholder, :root .demo-graph {
         .mdl-select__expandable-holder .mdl-select__label:after {
           bottom: 0;
         }
+
+        .result-tab{
+           border: 1px solid black;
+           margin-left: 500px;
+           margin-top: 100px;
+           margin-bottom: 100px;
+
+        }
+        .result-tab th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+
+}
+.result-tab.tr.td.img {
+  width: 30px;
+  height: 30px;
+}

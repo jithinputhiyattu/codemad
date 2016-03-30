@@ -127,15 +127,11 @@ void writeResult(const char *line)
  fclose(fres);
 }
 
-void init()
- {
-  writeResult("In   Out  Key  Score");
- }
 
 int main(int argc,char* argv[])
 {
  setProgram(argv[1]);
- init();
+ writeResult("{\"result\":[");
  int nTc = (argc-2);// give number of input files or number of test cases
  compileSource(argv[1]);
  char *in  = new char[250];
@@ -151,16 +147,32 @@ int main(int argc,char* argv[])
   strcat(out,".out");
   strcat(key,".key");
   execcuteCode(program,in,out);
+  if(i<nTc-1)
+  {
   if(compareResult(out,key))
    {
-    sprintf(res,"%03d  %03d  %03d  Passed",i+1,i+1,i+1);
+    sprintf(res,"{\"in\": \"%03d\", \"out\" :\"%03d\", \"key\":\"%03d\", \"score\":\"Passed\"},",i+1,i+1,i+1);
    }
   else
    {
-    sprintf(res,"%03d  %03d  %03d  Failed",i+1,i+1,i+1);
+    sprintf(res,"{\"in\": \"%03d\", \"out\" :\"%03d\", \"key\":\"%03d\", \"score\":\"Failed\"},",i+1,i+1,i+1);
    }
+ }
+ else
+ {
+
+  if(compareResult(out,key))
+   {
+   sprintf(res,"{\"in\": \"%03d\", \"out\" :\"%03d\", \"key\":\"%03d\", \"score\":\"Passed\"}",i+1,i+1,i+1);
+   }
+  else
+   {
+    sprintf(res,"{\"in\": \"%03d\", \"out\" :\"%03d\", \"key\":\"%03d\", \"score\":\"Failed\"}",i+1,i+1,i+1);
+   }
+ }
   writeResult(res);
  }
+ writeResult(" ]}");
  strcpy(res,"cat ");
  strcat(res, result);
  cout<<"executing : "<<res<<endl;

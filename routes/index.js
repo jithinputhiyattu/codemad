@@ -58,7 +58,6 @@ router.post('/execute',function(req, res, next)
 {
   var codearea = req.body.codearea;
   console.log(codearea);
-
   fs.writeFile("userurl_fact.cpp", codearea, function(err) {
     if(err) 
     {
@@ -67,7 +66,7 @@ router.post('/execute',function(req, res, next)
     else
     {
         //var prc = spawn('./docker/Go.out ', ['codein/fact/userurl.cpp',  'codein/fact/fact_1',  'codein/fact/fact_2', 'codein/fact/fact_3' ]);
-      exec('sudo ./Go.out userurl_fact.cpp fact_1 fact_2 fact_3', 
+      exec('sudo ./Go.out userurl_fact.cpp fact_1 fact_2 fact_3 fact_4 fact_5 fact_6 fact_7', 
         function callback(error, stdout, stderr)
         {
              console.log(stdout);       
@@ -79,7 +78,9 @@ router.post('/execute',function(req, res, next)
                 throw err;
               }
               console.log(data);
-              res.render('result', { data: data }); 
+              //var data=JSON.stringify(data);
+              var result=JSON.parse(data);
+             res.render('result', { data: result }); 
             });
        });
     }
