@@ -2,6 +2,8 @@ var express = require('express');
 var router  = express.Router();
 var data    = require('../data');
 var fs      = require('fs');
+var session = require('express-session');
+router.use(session({secret: 'secret-key',saveUninitialized: true,resave: true}));
 
 var exec    = require('child-process-promise').exec;
 var spawn   = require('child-process-promise').spawn;
@@ -9,22 +11,34 @@ var spawn   = require('child-process-promise').spawn;
 var DockerCmd = require("docker-cmd");
 var dockerCmd = new DockerCmd();
 
+var sess;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	sess=req.session;
+ if(sess.userName){
+ 	// res.redirect('dashboard');
+ 	  res.render('dashboard',{userName : sess.name 
+          ,profilePic : sess.profilePic
+          ,email: sess.email });
+ }
+ 	else
   res.render('index', { title: 'codeMad' });
 });
 
 router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'codeMad' });
+  res.render('about', { title: 'codeMad', userName:sess.userName ,profilePic : sess.profilePic
+          ,email: sess.email  });
 });
 
 router.get('/articles', function(req, res, next) {
-  res.render('articles', { title: 'codeMad' });
+  res.render('articles', { title: 'codeMad', userName:sess.userName ,profilePic : sess.profilePic
+          ,email: sess.email  });
 });
 
 router.get('/contactus', function(req, res, next) {
-  res.render('contactus', { title: 'codeMad' });
+  res.render('contactus', { title: 'codeMad', userName:sess.userName ,profilePic : sess.profilePic
+          ,email: sess.email  });
 });
 
 router.get('/exam', function(req, res, next) {
@@ -34,7 +48,21 @@ router.get('/exam', function(req, res, next) {
 
 
 router.get('/practice', function(req, res, next) {
-  res.render('practice', { title: 'codeMad' });
+  res.render('practice', { title: 'codeMad', userName:sess.userName ,profilePic : sess.profilePic
+          ,email: sess.email  });
+});
+
+
+router.get('/logout', function(req, res, next) {
+ 	req.session.destroy(function(err){
+		if(err){
+			console.log(err);
+		}
+		else
+		{
+			res.redirect('/');
+		}
+	});
 });
 
 
@@ -42,15 +70,24 @@ router.get('/practice', function(req, res, next) {
 
 router.post('/login',function(req, res, next) 
 {
+	sess=req.session;	
+	
+	sess.userName=req.body.userName;
   var userName = req.body.userName;
   console.log(userName);
   data.findByName(req, res,function(callback)
     {
          var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
+         sess.name=callback.name;
+         sess.profilePic=callback.picture;
+
          res.render('dashboard',{userName : callback.name 
           ,profilePic : callback.picture
           ,email: callback.email });
+
+         sess.email=callback.email;
     });
+
 });
 
 

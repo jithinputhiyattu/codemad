@@ -14,6 +14,10 @@
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
      <% include header.ejs %>
+     <% if (locals.userName) { %>
+    <% include leftmenu.ejs %>
+ <% } %>
+
         <div class="android-content mdl-layout__content">
 
 <div class="article-card-wide mdl-card mdl-shadow--4dp">
