@@ -93,6 +93,7 @@ router.post('/login',function(req, res, next)
 
 router.post('/execute',function(req, res, next) 
 {
+
   var codearea = req.body.codearea;
   console.log(codearea);
   fs.writeFile("userurl_fact.cpp", codearea, function(err) {
@@ -117,7 +118,9 @@ router.post('/execute',function(req, res, next)
               console.log(data);
               //var data=JSON.stringify(data);
               var result=JSON.parse(data);
-             res.render('result', { data: result }); 
+             res.render('result', { data: result,userName : sess.name 
+          ,profilePic : sess.profilePic
+          ,email: sess.email }); 
             });
        });
     }
@@ -135,7 +138,7 @@ router.post('/signup',function(req, res, next)
   data.insertUser(req, res,function(callback)
     {
         console.log(callback);
-         var html = '<h3>Hello: ' + userName + ', your email id is :' +callback.email+'</h1>';
+         var html = '<h3>Hello ' + userName + ', you have successfully signed up. Please login.</h1>';
          res.send(html);
     });
  

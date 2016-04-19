@@ -17,13 +17,14 @@
         <div class="android-navigation-container">
             <nav class="android-navigation mdl-navigation">
                 
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">Home</a>
+               
                 <% if (locals.userName) { %>
 
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/articles">Article</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/practice">Practice</a>
                     
- <% } %> 
+ <% } else{ %> 
+     <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/">Home</a> <% } %>
                 <!-- <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/exam">Exam</a> -->
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/about">About</a>
                 <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/contactus">Contact us</a>

@@ -810,7 +810,8 @@ _:-ms-input-placeholder, :root .demo-graph {
 }
 
 .sample3{ 
-  width: 120px;
+  width: 150px;
+  margin-left: 20px;
 
 
  
@@ -818,9 +819,10 @@ _:-ms-input-placeholder, :root .demo-graph {
 /*            */
 
 .demo-avatar {
-  width: 48px;
-  height: 48px;
+  width:120px;
+  height: 100px;
   border-radius: 24px;
+  margin-left: 20px;
 }
 .demo-layout .demo-header .mdl-textfield {
   padding-top: 27px;
