@@ -209,8 +209,8 @@ a img{
 
 .android-screen-section {
   position: relative;
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 40px;
+
 }
 
 .android-screens {
@@ -809,8 +809,9 @@ _:-ms-input-placeholder, :root .demo-graph {
   padding-top: 10px;
 }
 
-.sample3{
-  width: 150px;
+.sample3{ 
+  width: 120px;
+
 
  
 }
@@ -1213,4 +1214,24 @@ _:-ms-input-placeholder, :root .demo-graph {
 .result-tab.tr.td.img {
   width: 30px;
   height: 30px;
+}
+
+
+.article-card-wide.mdl-card {
+  width: 900px;
+  margin-left: 15%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  min-height: 150px;
+}
+.article-card-wide > .mdl-card__title {
+  color: #000;
+  height: 30px;
+  margin-top: 20px;
+}
+.article-card-wide > .mdl-card__menu {
+  color: #fff;
+}
+.article-card-wide >.mdl-card__actions>.mdl-button{
+ margin-left: 80%;
 }
