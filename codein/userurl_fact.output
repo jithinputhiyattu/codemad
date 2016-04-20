@@ -1,9 +1,0 @@
-{"result":[
-{"in": "001", "out" :"001", "key":"001", "score":"Passed"},
-{"in": "002", "out" :"002", "key":"002", "score":"Passed"},
-{"in": "003", "out" :"003", "key":"003", "score":"Passed"},
-{"in": "004", "out" :"004", "key":"004", "score":"Failed"},
-{"in": "005", "out" :"005", "key":"005", "score":"Failed"},
-{"in": "006", "out" :"006", "key":"006", "score":"Failed"},
-{"in": "007", "out" :"007", "key":"007", "score":"Failed"}
- ]}

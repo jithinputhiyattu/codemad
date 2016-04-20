@@ -96,7 +96,9 @@ router.post('/execute',function(req, res, next)
 
   var codearea = req.body.codearea;
   console.log(codearea);
-  fs.writeFile("userurl_fact.cpp", codearea, function(err) {
+  var fileName = sess.userName + "_fact.cpp";
+console.log(fileName);
+  fs.writeFile(fileName, codearea, function(err) {
     if(err) 
     {
         return console.log(err);
@@ -104,12 +106,13 @@ router.post('/execute',function(req, res, next)
     else
     {
         //var prc = spawn('./docker/Go.out ', ['codein/fact/userurl.cpp',  'codein/fact/fact_1',  'codein/fact/fact_2', 'codein/fact/fact_3' ]);
-      exec('sudo ./Go.out userurl_fact.cpp fact_1 fact_2 fact_3 fact_4 fact_5 fact_6 fact_7', 
+        //fact_4 fact_5 fact_6 fact_7
+      exec('sudo ./Go.out '+sess.userName +'_fact.cpp fact_1 fact_2 fact_3 ', 
         function callback(error, stdout, stderr)
         {
              console.log(stdout);       
              console.log(error);
-             fs.readFile('userurl_fact.output','utf8' ,function readed(err, data)
+             fs.readFile(sess.userName+'_fact.output','utf8' ,function readed(err, data)
              {
              if (err) 
               {
